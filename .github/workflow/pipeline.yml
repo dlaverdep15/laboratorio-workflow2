@@ -20,7 +20,7 @@ jobs:
       run: npm install
 
     - name: crear un nuevo mensaje
-      run: echo "creo que lo logre XD" >> test.txt
+      run: echo "creo que lo logre XD - fin del municado!!!" >> test.txt
 
     - name: Listar archivos y probar que existe el anterior
       run: ls -la | grep test.txt
