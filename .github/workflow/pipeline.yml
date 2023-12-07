@@ -1,0 +1,29 @@
+name: Instalacion node.js
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build node:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Se clona el codigo fuente
+      uses: actions/checkout@v2
+
+    - name: configuracion de node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Instalacion dependencias
+      run: npm install
+
+    - name: crear un nuevo mensaje
+      run: echo "creo que lo logre XD" >> test.txt
+
+    - name: Listar archivos y probar que existe el anterior
+      run: ls -la | grep test.txt
+
+    - name: Mostrar el archivo creado
+      run: cat test.txt
